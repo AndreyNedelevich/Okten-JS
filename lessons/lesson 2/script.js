@@ -142,7 +142,7 @@ if (time <= 30) {
 } else if (time > 30 && time <= 59) {
     time <= 45 ? console.log("Третя четверть") : console.log('Четверта четверть')
 } else {
-    confirm("Введите число от 0 до 59")
+    confirm("Введіть число від 0 до 59")
 }
 
 
