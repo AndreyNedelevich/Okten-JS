@@ -30,7 +30,7 @@ for (const arrayElement of array) {
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
 for (let k = 0; k < 100; k++) {
     if (k % 2 ===0 ) {
-         console.log([k]);
+         // console.log(k);
     }
 }
 
@@ -38,7 +38,7 @@ for (let k = 0; k < 100; k++) {
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 for (let k = 0; k < 100; k++) {
     if (k % 2 ===1 ) {
-         console.log([k]);
+         // console.log(k);
     }
 }
 //**************************************************************************************************************************
@@ -88,7 +88,6 @@ console.log(arrayRes6);
 const arrRes7=[6, 7, 11,false, true, false, 36, 101,'age', 'lastName', true, false, "friend", "e", 'name',];
 for (let k = 2; k < arrRes7.length; k+=3) {
     console.log(k,arrRes7[k]);
-
 }
 
 // 3. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
