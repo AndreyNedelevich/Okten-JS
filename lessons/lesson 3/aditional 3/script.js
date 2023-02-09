@@ -103,8 +103,8 @@ for (let k = 2; k < array2.length; k+=3) {
 const resulting=[];
 for (let k = 2; k < array2.length; k+=3) {
     if(array2[k]%2===0){
-        // resulting[k]=array2[k]
-        resulting.push(array2[k])
+        resulting[k]=array2[k]
+        // resulting.push(array2[k])
     }
 }
 console.log(resulting);
@@ -163,12 +163,15 @@ let citiesWithId = [
 //         // TO BE CONTINUED .....
 //     ]
 let usersWithCitie=[...usersWithId]
-// let usersWithCitie=usersWithId
+
 
 for (const obj of usersWithCitie)
-    for (const id of citiesWithId){
-        obj.adress=id;
+for (const adress of citiesWithId) {
+    if(obj.id===adress.user_id)
+        obj.adress = adress;
     }
+
+
 console.log(usersWithCitie);
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
