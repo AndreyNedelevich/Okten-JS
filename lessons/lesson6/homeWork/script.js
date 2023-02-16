@@ -268,3 +268,26 @@ console.log(findSass);
 
 const findDocker=coursesArray.filter(item=>find(item.modules,"docker"));
 console.log(findDocker);
+
+//*************************************************************************************************************
+
+
+// - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
+// document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
+
+
+function cutString(str, n) {
+    const res = [];
+    let count1=0;
+    let count2=n;
+    // 3,6,9,11
+    for(var i = 0 ; i < str.length; i+=n) {
+        res.push(str.slice(count1, count2));
+        count1+=n
+        count2+=n
+    }
+    return res;
+}
+
+const result=cutString('наслаждение',3)
+console.log(result);
