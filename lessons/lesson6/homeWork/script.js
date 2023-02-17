@@ -304,8 +304,10 @@ console.log(cards.filter(item => item.color === 'red'));
 console.log(cards.filter(item => item.cardSuit === 'diamonds'));
 
 // - всі трефи від 9 та більше
-console.log(cards.filter(item => item.cardSuit === 'clubs' && item.value.length>1));
 
+const sort = cards.filter(item =>item.cardSuit === 'clubs');
+const resulting=sort.filter(item =>item.value.length>1||item.value==="9");
+console.log(resulting);
 
 // =========================
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
