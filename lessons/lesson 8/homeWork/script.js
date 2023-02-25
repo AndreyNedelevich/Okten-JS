@@ -226,6 +226,6 @@ for (const item of arrPopelushka) {
         console.log(item);
     }
 }
-//     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+//   Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
 console.log(arrPopelushka.find(item => princ.shoesSize === item.footSize));
