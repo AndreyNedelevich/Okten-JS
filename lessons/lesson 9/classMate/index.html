@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>owu.com.ua - OKTEN SCHOOL</title>
+</head>
+<body>
+
+<!--*******************************************************************************************-->
+<ul id="xxx">
+    <li></li>
+    <li class="eytfygfubd"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<div class="hgdfugsdufg">
+    <ul id="weqoieuoqwiu">
+        <li id="yyy">
+            <span><a href=""><i></i></a></span>
+        </li>
+        <li class="asdqewe"></li>
+        <li></li>
+        <li class="uyfysfs"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="ywter7yewr"></li>
+        <li>
+            <div class="qqqqqqqqqqq">
+
+                <a href=""></a>
+            </div>
+        </li>
+        <li>
+
+            <ul class="asd">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div></div>
+
+<!--***************************************************************************************-->
+
+<script>
+<!--***********************************   Saerch   ***********************************************   -->
+    //Поиск  DOM
+    // console.log(document.head);
+    // console.log(document.head.innerHTML);
+    // console.log(document.head.children);
+    // console.log(document.body.innerHTML);
+
+    //Поиск  ID
+    // let ul1 = document.getElementById('list-1');
+    // console.log(ul1);
+
+    //Поиск  class
+    // let menuCollection = document.getElementsByClassName('menu');
+    // console.log(menuCollection);
+    //
+    // for (const menuCollectionElement of menuCollection) {
+    //     console.log(menuCollectionElement);
+    // }
+
+    //Поиск  TAG
+    // let liList = document.getElementsByTagName('li');
+    // console.log(liList);
+
+    // let list1 = document.getElementById('list-1');
+    // console.log(list1);
+    //
+    // let list1LiCollection = list1.getElementsByTagName('li');
+    // console.log(list1LiCollection);
+
+
+    // console.log(document.querySelector('body .menu'));
+    // console.log(document.querySelectorAll('body .menu'));
+
+    // let nodeListOf = document.querySelectorAll('#list-2 > li');
+    // console.log(nodeListOf);
+    //
+    // for (const node of nodeListOf) {
+    //     console.log(node);
+    // }
+
+// ***********************************   DOM Object manipulation  ******************************************
+// let h1 = document.createElement('h1');
+// h1.innerText = 'hello okten';
+// h1.style.background = 'silver';
+//
+// // document.body.appendChild(h1);
+// document.body.append(h1);
+// // document.body.append(h1.cloneNode(true));
+
+let users2 = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
+]; // [{name age status}]
+
+for (const user of users) {
+    let userBlock = document.createElement('div');
+
+    let title = document.createElement('h2');
+    title.innerText = user.name;
+
+    let p = document.createElement('p');
+    p.innerText = `${user.age} ${user.status}`;
+    p.classList.add('xxx');
+
+    userBlock.append(title, p);
+
+    document.body.appendChild(userBlock);
+}
+
+// let target = document.getElementById('target');
+// console.log(target.innerText);
+// target.innerText = 'okten';
+// target.style.background = 'silver';
+// // console.log(target.classList);
+// target.classList.add('foo');
+// target.classList.add('bar');
+// // console.log(target.classList.item(0));
+// // console.log(target.classList.contains('asd'));
+// // target.classList.toggle('asd');
+//
+// // console.log(target.getAttribute('xxx'));
+// // console.log(target.getAttribute('id'));
+// // console.log(target.getAttribute('class'));
+// // console.log(target.getAttribute('style'));
+// // target.setAttribute('id', 'qwreqwreytrwqfe');
+// // console.log(target.previousElementSibling);
+// // console.log(target.nextElementSibling);
+// // console.log(target.children); // HTML
+// // console.log(target.childNodes); // NOde
+//
+// target.innerHTML = '<b>asdigashdg</b>';
+// console.log(target.outerHTML);
+
+
+let collectionOfDiv = document.getElementsByClassName('point');
+
+for (const divElement of collectionOfDiv) {
+    divElement.innerText = 'ahsuyyqewfy';
+    divElement.classList.add('qqq');
+}
+
+//****************************************  DOM CREATE *****************************************************
+
+// let h2 = document.createElement('h2');
+// h2.innerText = 'some title';
+// document.body.appendChild(h2);
+
+// let allUsersDiv = document.getElementsByClassName('users')[0];
+//
+// let users = [
+//     {name: 'vasya', age: 31, status: false},
+//     {name: 'petya', age: 30, status: true},
+//     {name: 'kolya', age: 29, status: true},
+//     {name: 'olya', age: 28, status: false},
+//     {name: 'max', age: 30, status: true},
+//     {name: 'anya', age: 31, status: false},
+//     {name: 'oleg', age: 28, status: false},
+//     {name: 'andrey', age: 29, status: true},
+//     {name: 'masha', age: 30, status: true},
+//     {name: 'olya', age: 31, status: false},
+//     {name: 'max', age: 31, status: true}
+// ]; // [{name : string,age :number, status:boolean}]
+// for (const user of users) {
+//     let li = document.createElement('li');
+//     li.classList.add('user');
+//     li.innerText = user.name;
+//     allUsersDiv.appendChild(li);
+// }
+
+
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
+];
+
+for (const user of users) {
+    let userInfoDiv = document.createElement('div');
+
+    let h2 = document.createElement('h2');
+    h2.innerText = user.name;
+
+    let p = document.createElement('p');
+    p.innerText = user.status + ' ' + user.age;
+
+    userInfoDiv.append(h2, p);
+
+
+    document.body.appendChild(userInfoDiv);
+}
+
+//*********************************************  RECURTION  ************************************************
+
+
+    let selectors = {
+    ids: [],
+    classes: []
+}
+
+    function explorer(htmlElement) {
+    console.log(htmlElement);
+    if (htmlElement.getAttribute('class')) {
+    let classAttr = htmlElement.getAttribute('class');
+    selectors.classes.push(classAttr);
+}
+    if (htmlElement.getAttribute('id')) {
+    let idAttr = htmlElement.getAttribute('id');
+    selectors.ids.push(idAttr);
+}
+
+
+    let children = htmlElement.children;
+    if (children.length !== 0) {
+    for (const child of children) {
+    explorer(child);
+}
+}
+}
+
+    explorer(document.body);
+    console.log(selectors);
+
+
+</script>
+</body>
+</html>

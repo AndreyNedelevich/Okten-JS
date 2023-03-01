@@ -309,7 +309,8 @@ const sort = cards.filter(item =>item.cardSuit === 'clubs');
 const resulting=sort.filter(item =>item.value.length>1||item.value==="9");
 console.log(resulting);
 
-// =========================
+// console.log(cards.filter((card) => card.cardSuit === 'clubs' && ['9', '10', 'ace', 'jack', 'queen', 'king'].includes(card.value)));
+// ==========================================================================================
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
 // {
 //     spades:[],
@@ -317,10 +318,16 @@ console.log(resulting);
 //     hearts:[],
 //     clubs:[]
 // }
-// =========================
+// =======================================================================
+// V1
+// const box = cards.reduce((acc, current) => {
+//   acc[current.cardSuit].push(current);
+//   return acc;
+// }, { spade:[], diamond:[], heart:[], clubs:[] });
+// console.log(box)
 
+//V 2
 const CurdsSort=cards.reduce((acc,currentItem)=>{
-
     switch (currentItem.cardSuit) {
         case "spades":
             acc.spades.push(currentItem);
@@ -429,12 +436,14 @@ const find=(arr,find)=>{
 const findSass=coursesArray.filter(item=>find(item.modules,"sass"))
 console.log(findSass);
 
+// console.log(coursesArray.filter((item) => item.modules.includes('sass')));
 
 // --написати пошук всіх об'єктів, в який в modules є docker
 
 const findDocker=coursesArray.filter(item=>find(item.modules,"docker"));
 console.log(findDocker);
 
+// console.log(coursesArray.filter((item) => item.modules.includes('docker')));
 //*************************************************************************************************************
 
 
