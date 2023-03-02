@@ -394,7 +394,7 @@ document.getElementById("btn").addEventListener("click", (e) => {
 
     if (line.value && cell.value && descrip.value) {
 
-        blockBig.style.gridTemplateColumns = `repeat( ${Math.round(cell.value)}, minmax(5px, auto))`;
+        blockBig.style.gridTemplateColumns = `repeat( ${Math.round(cell.value)}, minmax(10px, auto))`;
         blockBig.style.gridTemplateRows = `repeat( ${Math.round(line.value)}, minmax(50px, auto))`;
         blockBig.style.gridAutoRows = `minmax(50px, auto)`;
 
