@@ -78,7 +78,7 @@ let coursesAndDurationArray = [
 
 for (const item of coursesAndDurationArray) {
     const div = document.createElement("div")
-    div.textContent = `${item.title}  - ${item.monthDuration}   `;
+    div.textContent = `${item.title}  -monthDuration ${item.monthDuration}   `;
     document.body.append(div);
 }
 
@@ -105,7 +105,7 @@ coursesAndDurationArray2.forEach((item, index) => {
     title.innerText = item.title;
     let p = document.createElement('p');
     p.classList.add('description');
-    p.innerText = item.monthDuration;
+    p.innerText =`monthDuration  ${item.monthDuration}`;
     block.append(title, p);
     document.body.appendChild(block);
 })
@@ -277,17 +277,23 @@ for (const itemObj of coursesArray) {
     wrapper.style.fontWeight = '400';
 
 
-    subTitle.style.width = "50%"
+    subTitle.style.width = "40%"
+    subTitle.style.height = '35px';
     subTitle.style.backgroundColor = 'white';
-    subTitle2.style.width = "50%"
+    subTitle2.style.width = "40%"
+    subTitle.style.height = '35px'
     subTitle2.style.backgroundColor = 'white';
     subTitle2.style.border = '6px solid red';
     subTitle.style.border = '6px solid red';
     subTitle2.style.color = 'black';
     subTitle.style.color = 'black';
 
+
     const blockModules = document.createElement('div')
-    blockModules.style.margin = "0 auto"
+    blockModules.style.display = "flex";
+    blockModules.style.justifyContent = "space-evenly";
+    blockModules.style.flexWrap = "wrap";
+
 
 
     for (const item of itemObj.modules) {
@@ -296,13 +302,15 @@ for (const itemObj of coursesArray) {
 
 
         blockModule.style.textAlign = "center"
-        blockModule.style.width = "85%"
+        blockModule.style.width = "130px"
+        blockModule.style.height = "80px"
         blockModule.style.backgroundColor = 'white';
         blockModule.style.border = '6px solid red';
         blockModule.style.color = 'black';
-        blockModule.style.margin = ' 20px';
+        blockModule.style.margin = ' 6px';
+        blockModule.style.marginTop = ' 15px';
         blockModule.style.fontWeight = '400';
-        blockModule.padding = '10px 10px';
+        // blockModule.padding = '10px 10px';
 
         blockModules.append(blockModule)
     }
@@ -323,7 +331,7 @@ const message = document.createElement('div');
 message.innerHTML =
     'Мы используем на этом сайте cookie для улучшение функциональности.<button id="text" >Ok!</button>';
 
-container.prepend(message);
+container.append(message);
 message.classList.add('cookie');
 
 document
@@ -373,7 +381,7 @@ document.body.appendChild(task)
 document.body.appendChild(blockBig)
 
 task.innerHTML = 'Введите данные  <input placeholder="кількість рядків" type="number" class="input" id="lines" /> ' +
-    '<input placeholder="кількість колонок" type="number" class="input" id="cells"  /> <input placeholder="вміст ячеєк" class="input"  id="descriptions" />   <button id="btn" class="btn" >Ok!</button>  <button id="btn-resset" class="btn" >Сбросить</button>';
+    '<input placeholder="кількість колонок" type="number" class="input" id="cells"  /> <input placeholder="вміст ячеєк" class="input"  id="descriptions" />   <button id="btn" class="btn" >Ok!</button>  <button id="btn-resset" class="btn" >Скинути</button>';
 
 
 let line = document.getElementById("lines");
