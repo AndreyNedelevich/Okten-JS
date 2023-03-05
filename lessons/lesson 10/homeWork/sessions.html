@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .date {
+            display: flex;
+            flex-direction: column;
+            width: 290px;
+            height: 120px;
+            border: 1px solid #ececec;
+            background-color: #2a5b84;
+            color: #fefae1;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .month{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .year {
+            font-size: 35px;
+        }
+
+        .date__hour {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+<script>
+
+    let cartDate = localStorage.getItem('sessions');
+    let arrData = JSON.parse(cartDate);
+    console.log(arrData);
+
+    for (const item of arrData) {
+        const month = new Date(item).toLocaleString("ru-Ru", { month: "long" });
+        const year = new Date(item).getFullYear();
+        const day = new Date(item).toLocaleString("ru-Ru", { day: "2-digit" });
+        const Hour = new Date(item).getHours();
+        const minute = new Date(item).getMinutes();
+        const secund = new Date(item).getSeconds();
+
+        const time=`<div class="date">
+    <div class="month">${day} ${month}</div>
+    <div class="year">${year} </div>
+    <div class="date__hour">${Hour} : ${minute}</div>
+      <div class="date__hour">${secund} секунд</div>
+</div>`
+        let divElement = document.createElement('div');
+        document.body.append(divElement);
+        divElement.insertAdjacentHTML('afterbegin', time);
+    }
+
+</script>
+
+</body>
+</html>

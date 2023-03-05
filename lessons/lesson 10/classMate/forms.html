@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<!--Формы это специальный тег  у которого есть атрибут action  внутри его должна быть URL  вместе с ней будут собранны
+данные которые будут находиться в инпутах. .-->
+
+<!--В форме можно установить атрибут method он по умолчанию стоит get его можно переустановит в **  post ** и
+тогда форма после отправки будет иметь все параметры но она их не будет показывать в строке url. ПРи post все
+данные шифруються и они помещаються не в тело URL а помещаються в BODY   -->
+
+<form action="/someURL" name="f1" enctype="multipart/form-data" method="get">
+    <!--    Что бы передавтать с инпутов не только стрингу но и файлы необходимо пределить в form enctype="multipart/form-data" -->
+<!--    При отправки формы страница будет перегружена и мы будем перенаправленны на ту страницу кторая указана
+в action="/someURL"-->
+    <input
+            type="text"
+            value=""
+            placeholder="enter your name"
+            name="username">
+    <!--  При помощи name индифицируеться инпут и к нему можно обращаться через DOM.-->
+    <br>
+
+    <input
+            type="password"
+            name="password"
+            placeholder="endeter password"
+            minlength="3"
+
+    >
+    <br>
+    <input
+            type="number"
+            name="age"
+            placeholder="age input"
+            min="3"
+            max="7"
+            required
+    >
+    <!--    Атрибут required означает что если этот инпут будет пустым то форма не отправиться Форма будет отправляться
+     только тогда если вся валидация существует. -->
+    <br>
+    <input type="file" name="avatar">
+    <!--  <input type="file" name="avatar"> это инпут при помощи которого мы можем выбрать
+любой файл из нашей системы и загрузить его  -->
+    <br>
+    <input type="email" name="email" placeholder="eneter email">
+    <br>
+    <input type="date" name="date" placeholder="">
+<!--    Получим из него объект DATE-->
+    <br>
+    <label>
+        status
+        <input type="checkbox" name="status">
+    </label>
+<!--    ЧТо бы он был именнованный используем тег label. ИМ можно оббернуть инпут и дать название.-->
+    <br>
+    <div>
+        choose gender
+        <br>
+        <label>
+            male <input type="radio" name="gender" value="male"></label>
+        <label>
+            Female
+            <input type="radio" name="gender" value="female"></label>
+<!--  Все инпуты с type="radio" оборачиваються в один  <label> и в один DIV Как в указанном примере.       -->
+    </div>
+
+    <select name="skills" multiple>
+<!--     Что бы выбрать несколько вариантов нужно опредилить параметр  multiple -->
+        <option value="js" selected>JavaScript</option>
+<!--      Если утановить параметр selected на какие то параметры но они буду выбранны по дефолту.-->
+        <option value="java8">java 8</option>
+        <option value="java9">java 9</option>
+        <option value="html" selected>hyper text markup language</option>
+    </select>
+    <input type="submit">
+    <!--    Это инпут который выглядит как кнопка если он находиться внутри формы при клике
+на него страница будет перезагружаться-->
+    <button name="send" disabled>send</button>
+
+</form>
+
+<!--username=tepytazy-->
+<!--&-->
+<!--password=Pa%24%24w0rd%21-->
+<!--&-->
+<!--age=5-->
+<!--&-->
+<!--email=popujehobi%40mailinator.com-->
+<!--&-->
+<!--date=1996-01-22-->
+<!--&-->
+<!--status=on-->
+<!--&-->
+<!--gender=female-->
+<!--&-->
+<!--skills=java8-->
+<!--&-->
+<!--skills=html-->
+<script>
+<!--Способы при помощи которых мы можем доступиться к форме.-->
+    console.log(document.forms); // [form] получаем HTML Colection
+
+    console.log(document.forms[0]);//Выбираем форму по индексу массива
+
+    console.log(document.forms.f1);//Доступаемся к форме при помощи атрибута NAME который прописан внутр  нее  .
+
+    console.log(document.forms.f1.username); //доступаемся к инпуту по значению его атрибута name.
+
+    console.log(document.forms.f1.username.value);// При помощи атрибута value можно достать конкретные значения.
+
+    console.log(document.forms.f1.send.disabled);//ПРи помощи указание name кнопки Button доступаемся к баттон внктри формы.
+
+// NAME это как индификация инпута или формы  для Джава Скрипта. Но NAME не должны быть индивидульными.
+
+</script>
+</body>
+</html>

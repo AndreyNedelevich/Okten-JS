@@ -383,7 +383,6 @@ document.body.appendChild(blockBig)
 task.innerHTML = 'Введите данные  <input placeholder="кількість рядків" type="number" class="input" id="lines" /> ' +
     '<input placeholder="кількість колонок" type="number" class="input" id="cells"  /> <input placeholder="вміст ячеєк" class="input"  id="descriptions" />   <button id="btn" class="btn" >Ok!</button>  <button id="btn-resset" class="btn" >Скинути</button>';
 
-
 let line = document.getElementById("lines");
 let cell = document.getElementById("cells");
 let descrip = document.getElementById("descriptions");

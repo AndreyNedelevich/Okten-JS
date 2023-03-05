@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Title</title>
+  <style>
+    .product img {
+      width: 200px;
+    }
+
+    button {
+      display: block;
+    }
+  </style>
+</head>
+
+<a href="cart.html">cart page</a>
+<body>
+
+<!--В браузере есть пространство называеть Aplikation существует браузерная база данных. Она называеть web SQL   -->
+<!--Каждый раз когда мы переходим на сайт формируеться сессия и пока все вкладки к сайту открыты сесия
+продолжаеться. Информация про сесии сохранияется в **SESSION STORAGE** в вкладке  Aplikation. Также там есть
+Locale Storage это по факту храилище ктотрое переживает перезагрузку или закрытие страницы(браузера).    -->
+<!-- Информация в нем будет храниться пока мы его не почистим или уничтожим User браузера.-->
+
+<!-- C помощью LOCAL STORAGE делают корзинны на сайтах.-->
+
+<!--!!!! ОЧЕНЬ ВАЖНО LOCAL STORAGE ОТДЕЛЬНЫЙ ДЛЯ КАЖДОГО САЙТА. -->
+
+<script>
+
+<!--  Сам по себе LOCAL STORAGE находится в глобальном объекте Window но для получение доступа можно его не использовать.-->
+console.log(localStorage); //Просто выводим что бы посмотреть что там находится.
+localStorage.setItem("key","value1") // этот метод для того что бы создать ключ и в нем зафиксировать какое то значение.
+localStorage.setItem("key2","value2") // этот метод для того что бы создать ключ и в нем зафиксировать какое то значение.
+// Если даже удалить эти методы то они остануться в LOCAL STORAGE
+
+console.log(localStorage.getItem('key1'));   // при помощи этого метода можем доставать от туда информацию. value1
+
+  localStorage.setItem('user', JSON.stringify({name: 'vasya'}));
+  //  Если передать просто объект то получим просто [Object Object ] потому что только консоль может отображать объекты и их характрестики
+// Что бы получить корректные данные при помощи  JSON.stringify({name: 'vasya'}) превращаем объект в стрину, потому что  LOCAL STORAGE принимает только стрину.
+
+
+  let userJSON = localStorage.getItem('user');
+
+  let user = JSON.parse(userJSON);
+  // При помощи метода JSON.parse(userJSON); переводим с формата строка в формат обычный объект.
+
+  console.log(user);
+
+
+  let products = [
+    {
+      title: 'milk',
+      price: 22,
+      image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+    },
+    {
+      title: 'juice',
+      price: 27,
+      image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+    },
+    {
+      title: 'tomato',
+      price: 47,
+      image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+    },
+    {
+      title: 'tea',
+      price: 15,
+      image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+    },
+  ];
+
+  for (const product of products) {
+    let productDiv = document.createElement('div');
+    productDiv.classList.add('product');
+    let title = document.createElement('h2');
+    title.innerText = `${product.title} ${product.price}`;
+
+    let image = document.createElement('img');
+    image.src = product.image;
+
+    let button = document.createElement('button');
+    button.innerText = 'save';
+    button.onclick = function () {
+      // Прежде чем что запушить мы должны иметь масив что туду что то запушить.
+      let cartArray = JSON.parse(localStorage.getItem('cart')) || [];
+      // Делаем проверку если в Локел СТоредж сущестьвует масив 'cart' если он есть то работаем с ним но при этом сразу же ПАРСИМ его в обычный JS массив
+      // если его нет создаем под этим ключом путой масив.
+
+      cartArray.push(product); 
+
+      localStorage.setItem('cart', JSON.stringify(cartArray));
+      // на данном этапе внутри массива уже есть какой то объект или не один. И ПОСЛЕ ЭТОГО ОБРАТНО СОХРАНЯЕМ ЭТОТ МАССИВ
+      // В LOCAL STORAGE В ВИДЕ СТРИНГИ.
+
+    };
+
+    productDiv.append(title, image, button);
+    document.body.appendChild(productDiv);
+  }
+
+  //Если мы хотим удалить конкретный объект существует метод removeItem()
+localStorage.removeItem("key")
+//Если мы хотим удалить все хранилице LOCALE STORAGE  существует метод removeItem()
+// localStorage.clear()
+
+</script>
+</body>
+</html>

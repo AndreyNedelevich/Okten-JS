@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson9</title>
+    <style>
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+
+        }
+
+        .modal {
+            display: block;
+            width: 380px;
+            min-height: 400px;
+            background-color: #f2f2f2;
+            padding: 15px 20px 20px 20px;
+        }
+
+        .feed-form {
+            margin: 25px;
+            margin-top: 50px;
+            margin-left: 35px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        .feed-form > input {
+            height: 50px;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            border: none;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #4b4b4b;
+        }
+
+        .feed-form:nth-child(3) {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            border-radius: 5px;
+            background-color: #c70101;
+            border: none;
+            font-weight: 500;
+            font-stretch: normal;
+            color: #fff;
+            text-transform: uppercase;
+            width: 100%;
+            height: 55px;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .dataInput {
+            display: inline;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: none;
+            padding: 0 20px;
+            font-size: 25px;
+            font-weight: 700;
+            color: brown;
+        }
+
+        .dataInput:nth-child(n+1) {
+            margin-bottom: 45px;
+        }
+
+        .block {
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            color: black;
+            background: #bbbbbb;
+            font-size: 65px;
+            border-radius: 15px;
+        }
+
+        .shortBtn {
+            display: block;
+            text-align: center;
+            width: 150px;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 35px;
+            width: 100%;
+            min-height: 400px;
+
+        }
+
+        .wrapper_container {
+            display: flex;
+            width: 100%;
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+<div class="wrapper">
+    <div class="modal">
+        <form name="form" class="feed-form" action="#">
+            <input
+                    name="name"
+                    placeholder="Ваше имя"
+                    type="text"
+                    required
+
+            />
+            <input name="surName"
+                   placeholder="Ваша фамилия"
+                   type="text"
+                   required
+            />
+            <input min="1" name="age" type="number" placeholder="Ваш возраст" required/>
+            <button name="send" class="button ">Отправить форму</button>
+        </form>
+    </div>
+
+
+    <div class="modal">
+        <div class="feed-form">
+            <div id="name" class="dataInput"></div>
+            <div id="surName" class="dataInput"></div>
+            <div id="age" class="dataInput"></div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div id="number" class="block">
+
+</div>
+<button id="btn" class="button shortBtn">Сбросить</button>
+
+<a href="sessions.html" target="_blank" id="page" class="button shortBtn"> page sessions</a>
+
+
+
+
+
+<div class="container">
+
+</div>
+<div class="wrapper_container">
+    <button id="prev" class="button shortBtn">prev</button>
+    <button id="next" class="button shortBtn">next</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
